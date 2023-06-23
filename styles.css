@@ -1,0 +1,22 @@
+html { 
+    background-color:#00539F;
+}
+body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #e1ff007d;
+    padding: 0 20px 20px 20px;
+    border: 20px solid rgba(255, 255, 255, 0.583);
+}
+h1 {
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+    color: #dbd636;
+    text-shadow: 3px 3px 1px black;
+}
+img {
+    display: block;
+    margin: 0 auto;
+}
+            
