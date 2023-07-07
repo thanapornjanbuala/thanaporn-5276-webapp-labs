@@ -1,0 +1,23 @@
+#heading1{
+    color: blue;
+    text-align: center;
+}
+.border1{
+    color: darkturquoise;
+    text-align: left;
+    font-style: italic;
+    border: 2px solid royalblue;
+}
+.border2{
+    color: darkolivegreen;
+    text-align: center;
+    font-weight: bold;
+    border: 3px dotted coral;
+}
+.border3{
+    color: darkmagenta;
+      text-align: right;
+      font-size: large;
+      border: 4px dashed yellow;
+}
+

@@ -1,0 +1,52 @@
+p.solid1 {
+    border-style: solid;
+    border-color: blue;
+    background-color: aqua;
+    bottom: 0;
+    left: 0;
+    height: 120%;
+    width: 12%;
+}
+p.solid2 {
+    border-style: solid ;
+    border-color: green;
+    background-color: #a7f372;
+    bottom: 0;
+    left: 0;
+    height: 120%;
+    width: 12%;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    overflow: hidden;
+  }
+  
+  nav ul li {
+    float: left;
+  }
+  
+  nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    background-color: yellow;
+    color: black;
+  }
+  
+  nav ul li a.active {
+    background-color: purple;
+  }
+  ol {
+    list-style-type: upper-roman;
+}
+
+
+  
