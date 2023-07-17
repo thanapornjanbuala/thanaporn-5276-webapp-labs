@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
+  <title>Positive Integer Input</title>
+  <script>
+    window.onload = function() {
+      validateInput();
+    }
 
-    </head>
-    <body>
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <title>Positive Integer Input</title>
-          <script>
-            function validateInput() {
-              var input = document.getElementById("numberInput").value;
-              if (!Number.isInteger(Number(input)) || Number(input) <= 0) {
-                alert("Please enter a valid positive integer!");
-                return false;
-              }
-              return true;
-            }
-           
+    function validateInput() {
+      var input = prompt("Enter a Positive Integer");
+      if (!Number.isInteger(Number(input)) || Number(input) <= 0) {
+        alert("Please enter a valid positive integer!");
+        validateInput(); // Prompt again if the input is invalid
+      } else {
+        showPrimes(Number(input));
+      }
+    }
 
+    function showPrimes(input) {
+      var primes = [];
+      for (let i = 2; i <= input; i++) {
+        if (isPrime(i)) {
+          primes.push(i);
+        }
+      }
+      alert(primes.join(', '));
+    }
 
-          </script>
-        </head>
-        <body>
-          <h2>Enter a Positive Integer</h2>
-          <form onsubmit="return validateInput()">
-            <input type="text" id="numberInput" name="number" />
-            <input type="submit" value="Submit" />
-          </form>
-        </body>
-        </html>
-    </body>
+    function isPrime(num) {
+      for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+          return false;
+        }
+      }
+      return num > 1;
+    }
+  </script>
+</head>
+<body>
+</body>
 </html>
