@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Message</title>
+</head>
+<body>
+    <script>
+        let age = prompt("What is your age?", 18);
+        const welcome = age < 18
+          ? () => alert("Hello!")
+          : () => alert("Greetings!");
+
+        welcome(); 
+    </script>
+</body>
+</html>
