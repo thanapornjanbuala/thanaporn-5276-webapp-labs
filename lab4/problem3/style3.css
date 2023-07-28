@@ -1,0 +1,53 @@
+/* Common styling for all screen sizes */
+body {
+    background-color: rgb(56, 55, 55);
+    margin: 0;
+    padding: 0;
+}
+
+.gridclass {
+    display: grid;
+    grid-gap: 0;
+}
+
+.cv {
+    background-color: rgb(8, 87, 67);
+    text-align: center;
+    font-size: x-large;
+    color: white;
+}
+
+.menu1, .menu2 {
+    background-color: rgb(56, 55, 55);
+    font-size: medium;
+    color: white;
+    text-align: left;
+}
+
+.menu1 a:hover, .menu2 a:hover {
+    background-color: rgb(255, 255, 255);
+    font-size: medium;
+    color: rgb(0, 0, 0);
+    text-align: left;
+}
+
+.content1, .content2 {
+    font-size: small;
+    color: rgb(0, 0, 0);
+    text-align: left;
+}
+
+.content1 {
+    background-color: rgb(147, 147, 147);
+}
+
+.content2 {
+    background-color: rgb(226, 218, 145);
+}
+
+/* Media query for screens with a maximum width of 768px (mobile phones) */
+@media (max-width: 768px) {
+    .gridclass {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+}
