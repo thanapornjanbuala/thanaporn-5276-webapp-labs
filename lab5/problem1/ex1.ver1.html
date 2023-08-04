@@ -1,0 +1,86 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Positive Integer Input</title>
+  <script>
+    window.onload = function() {
+      validateInput();
+    }
+
+    function validateInput() {
+      var input = prompt("Enter a Positive Integer");
+      if (!Number.isInteger(Number(input)) || Number(input) <= 0) {
+        alert("Please enter a valid positive integer!");
+        validateInput(); // Prompt again if the input is invalid
+      } else {
+        showPrimes(Number(input));
+      }
+    }
+
+    function showPrimes(input) {
+      var primes = [];
+      for (let i = 2; i <= input; i++) {
+        if (isPrime(i)) {
+          primes.push(i);
+        }
+      }
+      alert(primes.join(', '));
+    }
+
+    function isPrime(num) {
+      for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+          return false;
+        }
+      }
+      return num > 1;
+    }
+  </script>
+</head>
+<body>
+</body>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Positive Integer Input</title>
+  <script>
+    window.onload = function() {
+      validateInput();
+    }
+
+    function validateInput() {
+      var input = prompt("Enter a Positive Integer");
+      if (!Number.isInteger(Number(input)) || Number(input) <= 0) {
+        alert("Please enter a valid positive integer!");
+        validateInput(); // Prompt again if the input is invalid
+      } else {
+        showPrimes(Number(input));
+      }
+    }
+
+    function showPrimes(input) {
+      var primes = [];
+      for (let i = 2; i <= input; i++) {
+        if (isPrime(i)) {
+          primes.push(i);
+        }
+      }
+      alert(primes.join(', '));
+    }
+
+    function isPrime(num) {
+      for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+          return false;
+        }
+      }
+      return num > 1;
+    }
+  </script>
+</head>
+<body>
+</body>
+>>>>>>> 8fa8338379093b98c4b25b30168ada97dcc9b94d
+</html>
