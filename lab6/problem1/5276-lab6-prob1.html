@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simple DOM example</title>
+
+    </head>
+    <body>
+        <section>
+            <img id="myImage" src="https://building.kku.ac.th/wp-content/uploads/2019/08/Th_color.png" alt="KKU">
+            <p>Here we will add a link to the 
+                <a href="http://www.kku.ac.th">KKU</a>
+            </p>
+        </section>
+
+        <script>
+            var link = document.querySelector('a');
+            link.textContent = "Faculty of Engineering, KKU";
+            link.href = "http://www.en.kku.ac.th";
+            var elementRef = document.getElementById('myId');
+            var elementRefArray = document.getElementsByTagName('p');
+            var sect = document.querySelector('section');
+            var para = document.createElement('p');
+            para.textContent = 'We hope you enjoy learning';
+            sect.appendChild(para);
+
+            var text = document.createTextNode(' — the place where we are now');
+            var linkPara = document.querySelector('p');
+            linkPara.appendChild(text);
+            sect.appendChild(linkPara);
+            sect.removeChild(linkPara);
+            para.style.color = 'white';
+            para.style.backgroundColor = 'black';
+            para.style.padding = '10px';
+            para.style.width = '250px';
+            para.style.textAlign = 'center';
+
+            // Adding a link to the new picture
+            var pic = document.querySelector('#myImage');
+            pic.src ='https://www.en.kku.ac.th/web/wp-content/uploads/2015/09/com22-1024x683.jpg';
+
+            // Adding a click event to the image to navigate to a new webpage
+            pic.addEventListener('click', function() {
+                window.location.href = 'https://www.en.kku.ac.th/web/';
+            });
+
+        </script>
+    </body>
+</html>

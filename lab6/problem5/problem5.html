@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .animated-div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation: colorShift 1s ease-in-out 1s infinite alternate, moveRight 1s ease-in-out 1s infinite alternate;
+  }
+
+  @keyframes colorShift {
+    0% {
+      background-color: red;
+    }
+    100% {
+      background-color: yellow;
+    }
+  }
+
+  @keyframes moveRight {
+    0% {
+      left: 0px;
+    }
+    100% {
+      left: 200px;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="animated-div"></div>
+</body>
+</html>
