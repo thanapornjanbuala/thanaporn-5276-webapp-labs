@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Info</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh; 
+        margin: 0;
+    }
+    #github-image {
+        border-radius: 50%; 
+        width: 150px; 
+        height: 150px;
+        border: 4px solid rgb(2, 169, 224);
+    }
+    #github-name {
+        text-decoration: underline; 
+        color: rgb(82, 12, 147);
+    }
+</style>
+
+<body>
+    <h1 id="github-name"></h1>
+    <a id="github-link" target="_blank">
+        <img id="github-image" src="https://avatars.githubusercontent.com/u/96261980?v=4" alt="GitHub Profile Image">
+    </a>
+
+    <script>  
+        function fetchGitHubData() {
+            const apiUrl = 'https://api.github.com/users/thanapornjanbuala';
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const githubNameElement = document.getElementById('github-name');
+                    const githubLinkElement = document.getElementById('github-link');
+                    const githubImageElement = document.getElementById('github-image');
+
+                    githubNameElement.textContent = data.login;
+                    githubLinkElement.href = data.html_url;
+                    githubImageElement.src = data.avatar_url;
+
+                    githubNameElement.addEventListener('click', () => {
+                        window.open(data.html_url, '_blank');
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching GitHub data:', error);
+                });
+        }
+        fetchGitHubData();
+    </script>
+</body>
+</html>

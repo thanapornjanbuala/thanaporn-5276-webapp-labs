@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parse Places</title>
+    <style>
+        .name{
+            color: rgb(14, 96, 202);
+        }
+        .location{
+            color: rgb(0, 178, 6);
+        }
+    </style>
+</head>
+<body>
+    <ol id="placesList"></ol> 
+
+    <script>
+        function fetchPlacesInformation() {
+            fetch('places.json')
+                .then(response => response.json())
+                .then(data => {
+                    const placesList = document.getElementById('placesList');
+                    const places = data.results;
+                    
+                    places.forEach((place, index) => {
+                        const name = place.name;
+                        const location = place.geometry.location;
+                        const lat = location.lat;
+                        const lng = location.lng;
+
+                        const placeItem = document.createElement('li'); 
+                        placeItem.innerHTML = `<span class="name" > name:${name}</span><br>
+                        <span class="location" > location: ${lat} ${lng}<br></span>`;
+                        
+                        placesList.appendChild(placeItem);
+                    });
+                })
+                .catch(error => console.error('Error fetching places information:', error));
+        }
+        window.onload = fetchPlacesInformation;
+    </script>
+</body>
+</html>
